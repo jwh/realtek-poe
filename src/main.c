@@ -517,10 +517,11 @@ static int poe_reply_4_port_status(uint8_t *reply)
 
 		if (port == 0xff) {
 			continue;
-		} else if (port >= MAX_PORT) {
+		}
+		/* else if (port >= MAX_PORT) {
 			ULOG_WARN("Invalid port status packet (port=%d)\n", port);
 			return -1;
-		}
+		}*/
 
 		state.ports[port].status = GET_STR(pstate & 0xf, status);
 	}
